@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SW Factory 2025 - DevOps to SDV Factory Excellence</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Navigation -->
+        <div class="nav-controls">
+            <button id="prevBtn" class="nav-btn" aria-label="Previous slide">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <span id="slideCounter" class="slide-counter">1 / 11</span>
+            <button id="nextBtn" class="nav-btn" aria-label="Next slide">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <!-- Slide Progress -->
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <!-- Slide 1: Title -->
+        <div class="slide active" id="slide1">
+            <div class="slide-content title-slide">
+                <div class="company-logo">
+                    <i class="fas fa-car-side logo-icon"></i>
+                    <h1>SW Factory 2025</h1>
+                </div>
+                <h2 class="main-title">Securing Quality Excellence:<br>From DevOps Factory to SDV Factory</h2>
+                <div class="tagline">
+                    <i class="fas fa-award"></i>
+                    <span>ISO 26262 Compliance Excellence Award Winner</span>
+                </div>
+                <div class="specialization">Active Suspension ECU Development & Testing Specialists</div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Problem Statement -->
+        <div class="slide" id="slide2">
+            <div class="slide-content">
+                <h2 class="slide-title">The Quality Challenge</h2>
+                <div class="problem-grid">
+                    <div class="problem-card">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3>Quality Issues</h3>
+                        <p>Software defects in master branch reaching production environments</p>
+                    </div>
+                    <div class="problem-card">
+                        <i class="fas fa-undo"></i>
+                        <h3>Customer Impact</h3>
+                        <p>Recalls and customer dissatisfaction affecting brand reputation</p>
+                    </div>
+                    <div class="problem-card">
+                        <i class="fas fa-tools"></i>
+                        <h3>Manual Processes</h3>
+                        <p>Lack of automated quality gates leading to human errors</p>
+                    </div>
+                    <div class="problem-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Inconsistent Metrics</h3>
+                        <p>Fragmented measurement across development teams</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Our Expertise -->
+        <div class="slide" id="slide3">
+            <div class="slide-content">
+                <h2 class="slide-title">Our DevOps Factory Expertise</h2>
+                <div class="expertise-container">
+                    <div class="expertise-main">
+                        <div class="award-badge">
+                            <i class="fas fa-trophy"></i>
+                            <span>ISO 26262 Excellence</span>
+                        </div>
+                        <h3>Active Suspension ECU</h3>
+                        <p>Specialized Development & Testing</p>
+                        <div class="expertise-stats">
+                            <div class="stat">
+                                <span class="stat-number">5+</span>
+                                <span class="stat-label">Years Experience</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">99.9%</span>
+                                <span class="stat-label">Uptime Achieved</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">50+</span>
+                                <span class="stat-label">Projects Delivered</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Solution Overview -->
+        <div class="slide" id="slide4">
+            <div class="slide-content">
+                <h2 class="slide-title">Three-Tier Evolution Approach</h2>
+                <div class="solution-tiers">
+                    <div class="tier-card basic">
+                        <div class="tier-header">
+                            <i class="fas fa-layer-group"></i>
+                            <h3>ARTs without DevOps</h3>
+                        </div>
+                        <ul class="tier-features">
+                            <li><i class="fas fa-hand-paper"></i> Manual + basic CI</li>
+                            <li><i class="fas fa-check-circle"></i> Manual + some auto quality gates</li>
+                            <li><i class="fas fa-chart-bar"></i> Dashboard/manual metrics</li>
+                            <li><i class="fas fa-search"></i> Postmortem/manual RCA</li>
+                            <li><i class="fas fa-dollar-sign"></i> Low cost optimization</li>
+                        </ul>
+                    </div>
+                    <div class="tier-card advanced">
+                        <div class="tier-header">
+                            <i class="fas fa-rocket"></i>
+                            <h3>ARTs with DevOps Factory</h3>
+                        </div>
+                        <ul class="tier-features">
+                            <li><i class="fas fa-cogs"></i> Full CI/CD, auto regression</li>
+                            <li><i class="fas fa-shield-alt"></i> Automated at multiple stages</li>
+                            <li><i class="fas fa-tachometer-alt"></i> Real-time dashboards</li>
+                            <li><i class="fas fa-bolt"></i> Proactive shift-left + fast loops</li>
+                            <li><i class="fas fa-chart-line"></i> High automation reduces effort</li>
+                        </ul>
+                    </div>
+                    <div class="tier-card premium">
+                        <div class="tier-header">
+                            <i class="fas fa-star"></i>
+                            <h3>SDV Factory Evolution</h3>
+                        </div>
+                        <ul class="tier-features">
+                            <li><i class="fas fa-network-wired"></i> Centralized, multi-domain automation</li>
+                            <li><i class="fas fa-satellite"></i> Fleet-scale, staged/OTA, safety</li>
+                            <li><i class="fas fa-link"></i> Unified E2E metrics, traceability</li>
+                            <li><i class="fas fa-brain"></i> AI-driven, cross team/vehicle learning</li>
+                            <li><i class="fas fa-recycle"></i> Minimized duplication, max reuse</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: DevOps Factory Benefits -->
+        <div class="slide" id="slide5">
+            <div class="slide-content">
+                <h2 class="slide-title">DevOps Factory Impact</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card hover-card" data-metric="85%">
+                        <i class="fas fa-rocket"></i>
+                        <h3>Release Speed</h3>
+                        <p>Increased predictability and deployment frequency</p>
+                        <div class="metric-badge">+85% Faster</div>
+                    </div>
+                    <div class="benefit-card hover-card" data-metric="70%">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Quality Gates</h3>
+                        <p>Automated quality validation at every stage</p>
+                        <div class="metric-badge">70% Fewer Defects</div>
+                    </div>
+                    <div class="benefit-card hover-card" data-metric="60%">
+                        <i class="fas fa-dollar-sign"></i>
+                        <h3>Cost Reduction</h3>
+                        <p>Reduced failure costs and recall incidents</p>
+                        <div class="metric-badge">60% Cost Savings</div>
+                    </div>
+                    <div class="benefit-card hover-card" data-metric="90%">
+                        <i class="fas fa-users"></i>
+                        <h3>Team Efficiency</h3>
+                        <p>Human effectiveness through automation</p>
+                        <div class="metric-badge">90% Automation</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: SDV Factory Evolution -->
+        <div class="slide" id="slide6">
+            <div class="slide-content">
+                <h2 class="slide-title">SDV Factory: Next Generation Platform</h2>
+                <div class="sdv-features">
+                    <div class="feature-row">
+                        <div class="feature-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Centralized Multi-Domain</h3>
+                            <p>Unified automation across all vehicle domains and platforms</p>
+                        </div>
+                    </div>
+                    <div class="feature-row">
+                        <div class="feature-icon">
+                            <i class="fas fa-satellite-dish"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Fleet-Scale Operations</h3>
+                            <p>Over-the-air updates with staged deployment and safety validation</p>
+                        </div>
+                    </div>
+                    <div class="feature-row">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>AI-Driven Intelligence</h3>
+                            <p>Cross-team and cross-vehicle learning for predictive quality</p>
+                        </div>
+                    </div>
+                    <div class="feature-row">
+                        <div class="feature-icon">
+                            <i class="fas fa-recycle"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Maximum Reusability</h3>
+                            <p>Minimized duplication with optimized resource utilization</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Quality Metrics -->
+        <div class="slide" id="slide7">
+            <div class="slide-content">
+                <h2 class="slide-title">Quality Metrics & Gates</h2>
+                <div class="metrics-container">
+                    <div class="metric-item">
+                        <div class="metric-icon"><i class="fas fa-shipping-fast"></i></div>
+                        <div class="metric-info">
+                            <h3>Deployment Frequency</h3>
+                            <p>Rate of stable releases to production</p>
+                        </div>
+                        <div class="metric-value">Daily+</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-icon"><i class="fas fa-clock"></i></div>
+                        <div class="metric-info">
+                            <h3>Lead Time for Changes</h3>
+                            <p>Time from commit to production deployment</p>
+                        </div>
+                        <div class="metric-value">&lt;1 Day</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-icon"><i class="fas fa-exclamation-circle"></i></div>
+                        <div class="metric-info">
+                            <h3>Change Failure Rate</h3>
+                            <p>Percentage of releases requiring remediation</p>
+                        </div>
+                        <div class="metric-value">&lt;5%</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-icon"><i class="fas fa-heartbeat"></i></div>
+                        <div class="metric-info">
+                            <h3>Mean Time to Recovery</h3>
+                            <p>Time to restore service after failure</p>
+                        </div>
+                        <div class="metric-value">&lt;1 Hour</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Implementation Roadmap -->
+        <div class="slide" id="slide8">
+            <div class="slide-content">
+                <h2 class="slide-title">Implementation Roadmap</h2>
+                <div class="roadmap">
+                    <div class="roadmap-phase">
+                        <div class="phase-number">1</div>
+                        <div class="phase-content">
+                            <h3>Assessment</h3>
+                            <div class="phase-duration">2-4 weeks</div>
+                            <p>Current state analysis, gap identification</p>
+                        </div>
+                    </div>
+                    <div class="roadmap-phase">
+                        <div class="phase-number">2</div>
+                        <div class="phase-content">
+                            <h3>Foundation</h3>
+                            <div class="phase-duration">8-12 weeks</div>
+                            <p>Basic CI/CD setup, quality gates implementation</p>
+                        </div>
+                    </div>
+                    <div class="roadmap-phase">
+                        <div class="phase-number">3</div>
+                        <div class="phase-content">
+                            <h3>Optimization</h3>
+                            <div class="phase-duration">12-16 weeks</div>
+                            <p>Advanced automation, metrics integration</p>
+                        </div>
+                    </div>
+                    <div class="roadmap-phase">
+                        <div class="phase-number">4</div>
+                        <div class="phase-content">
+                            <h3>Scale & Transform</h3>
+                            <div class="phase-duration">16-24 weeks</div>
+                            <p>SDV Factory capabilities, multi-platform integration</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Value Proposition -->
+        <div class="slide" id="slide9">
+            <div class="slide-content">
+                <h2 class="slide-title">Value Proposition</h2>
+                <div class="value-props">
+                    <div class="value-card primary">
+                        <i class="fas fa-dollar-sign"></i>
+                        <h3>Cost Reduction</h3>
+                        <p>Dramatically reduce failure costs, recalls, and operational overhead through automation</p>
+                        <div class="value-metric">60% Cost Savings</div>
+                    </div>
+                    <div class="value-card secondary">
+                        <i class="fas fa-users-cog"></i>
+                        <h3>Human Effectiveness</h3>
+                        <p>Optimize team productivity by eliminating manual processes and focusing on innovation</p>
+                        <div class="value-metric">3x Productivity</div>
+                    </div>
+                    <div class="value-card tertiary">
+                        <i class="fas fa-shield-check"></i>
+                        <h3>Quality Assurance</h3>
+                        <p>Ensure consistent, predictable quality with automated gates and continuous monitoring</p>
+                        <div class="value-metric">99.9% Reliability</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Assessment Questionnaire -->
+        <div class="slide" id="slide10">
+            <div class="slide-content assessment-slide">
+                <h2 class="slide-title">Factory Readiness Assessment</h2>
+                <div class="assessment-container" id="assessmentContainer">
+                    <div class="assessment-form">
+                        <!-- Contact Information -->
+                        <div class="contact-section">
+                            <h3><i class="fas fa-user"></i> Contact Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="contactName">Name</label>
+                                    <input type="text" id="contactName" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="contactEmail">Email</label>
+                                    <input type="email" id="contactEmail" class="form-control" placeholder="your.email@company.com" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="contactCompany">Company</label>
+                                    <input type="text" id="contactCompany" class="form-control" placeholder="Your Company" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="contactRole">Role</label>
+                                    <input type="text" id="contactRole" class="form-control" placeholder="Your Role" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Assessment Questions -->
+                        <div class="questions-section" id="questionsSection">
+                            <h3><i class="fas fa-clipboard-check"></i> Assessment Questions</h3>
+                            
+                            <!-- Question 1 -->
+                            <div class="question-card">
+                                <h4 class="question-title">What is your current level of automation in software development processes?</h4>
+                                <div class="question-options">
+                                    <label class="radio-option">
+                                        <input type="radio" name="automation_level" value="1">
+                                        <span class="radio-custom"></span>
+                                        <span class="option-text">Manual processes, minimal automation</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="automation_level" value="2">
+                                        <span class="radio-custom"></span>
+                                        <span class="option-text">Basic automation (CI, some tests)</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="automation_level" value="3">
+                                        <span class="radio-custom"></span>
+                                        <span class="option-text">Full CI/CD with automated testing</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Question 2 -->
+                            <div class="question-card">
+                                <h4 class="question-title">How many automotive platforms are you developing?</h4>
+                                <div class="question-options">
+                                    <label class="radio-option">
+                                        <input type="radio" name="platforms_count" value="1">
+                                        <span class="radio-custom"></span>
+                                        <span class="option-text">1-2 platforms</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="platforms_count" value="2">
+                                        <span class="radio-custom"></span>
+                                        <span class="option-text">3-5 platforms</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="platforms_count" value="3">
+                                        <span class="radio-custom"></span>
+                                        <span class="option-text">More than 5 platforms</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Question 3 -->
+                            <div class="question-card">
+                                <h4 class="question-title">What quality metrics do you track?</h4>
+                                <div class="question-options">
+                                    <label class="radio-option">
+                                        <input type="radio" name="quality_metrics" value="1">
+                                        <span class="radio-custom"></span>
+                                        <span class="option-text">Not tracking systematically</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="quality_metrics" value="2">
+                                        <span class="radio-custom"></span>
+                                        <span class="option-text">Basic metrics (bugs, development time)</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="quality_metrics" value="3">
+                                        <span class="radio-custom"></span>
+                                        <span class="option-text">Advanced metrics with dashboards and analytics</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Question 4 -->
+                            <div class="question-card">
+                                <h4 class="question-title">How often do you experience defects in production?</h4>
+                                <div class="question-options">
+                                    <label class="radio-option">
+                                        <input type="radio" name="production_defects" value="1">
+                                        <span class="radio-custom"></span>
+                                        <span class="option-text">Often (several times per month)</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="production_defects" value="2">
+                                        <span class="radio-custom"></span>
+                                        <span class="option-text">Sometimes (once a month or less)</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="production_defects" value="3">
+                                        <span class="radio-custom"></span>
+                                        <span class="option-text">Rarely (once a quarter or less)</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Question 5 -->
+                            <div class="question-card">
+                                <h4 class="question-title">Are you planning to transition to Software-Defined Vehicle architecture?</h4>
+                                <div class="question-options">
+                                    <label class="radio-option">
+                                        <input type="radio" name="sdv_plans" value="1">
+                                        <span class="radio-custom"></span>
+                                        <span class="option-text">Not planning in the near future</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="sdv_plans" value="2">
+                                        <span class="radio-custom"></span>
+                                        <span class="option-text">Considering the possibilities</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="sdv_plans" value="3">
+                                        <span class="radio-custom"></span>
+                                        <span class="option-text">Actively planning implementation</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="submit-section">
+                            <button id="submitAssessment" class="btn btn--primary btn--lg assessment-submit">
+                                <i class="fas fa-chart-line"></i>
+                                Get Readiness Assessment
+                            </button>
+                        </div>
+
+                        <!-- Results Section -->
+                        <div class="results-section hidden" id="resultsSection">
+                            <div class="results-card">
+                                <div class="results-header">
+                                    <i class="fas fa-trophy results-icon"></i>
+                                    <h3 id="resultsTitle">Your Readiness Level</h3>
+                                    <div class="score-display">
+                                        <span class="score-label">Score:</span>
+                                        <span id="scoreValue" class="score-value">0</span>
+                                        <span class="score-total">/ 15</span>
+                                    </div>
+                                </div>
+                                <div class="results-body">
+                                    <p id="resultsDescription" class="results-description"></p>
+                                    <div class="recommendations">
+                                        <h4><i class="fas fa-lightbulb"></i> Recommendations</h4>
+                                        <ul id="recommendationsList" class="recommendations-list"></ul>
+                                    </div>
+                                </div>
+                                <div class="results-footer">
+                                    <button class="btn btn--secondary" id="retakeAssessment">
+                                        <i class="fas fa-redo"></i> Retake Assessment
+                                    </button>
+                                    <button class="btn btn--primary contact-us-btn">
+                                        <i class="fas fa-envelope"></i> Contact Our Team
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Call to Action -->
+        <div class="slide" id="slide11">
+            <div class="slide-content cta-slide">
+                <h2 class="slide-title">Ready to Transform Your Quality?</h2>
+                <div class="cta-content">
+                    <div class="cta-main">
+                        <h3>Next Steps</h3>
+                        <ul class="cta-steps">
+                            <li><i class="fas fa-calendar-check"></i> Schedule a consultation</li>
+                            <li><i class="fas fa-search"></i> Conduct quality assessment</li>
+                            <li><i class="fas fa-road"></i> Define transformation roadmap</li>
+                            <li><i class="fas fa-rocket"></i> Begin implementation</li>
+                        </ul>
+                    </div>
+                    <div class="cta-contact">
+                        <h3>Contact Information</h3>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>info@swfactory2025.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+1 (555) 123-4567</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-globe"></i>
+                                <span>www.swfactory2025.com</span>
+                            </div>
+                        </div>
+                        <button class="btn btn--primary btn--lg cta-button">
+                            <i class="fas fa-arrow-right"></i>
+                            Get Started Today
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
