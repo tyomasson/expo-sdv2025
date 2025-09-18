@@ -1,9 +1,98 @@
 class PresentationApp {
     constructor() {
         this.currentSlide = 1;
-        this.totalSlides = 10;
+        this.totalSlides = 11;
         this.slides = document.querySelectorAll('.slide');
         this.isAnimating = false;
+        
+        // Assessment data
+        this.assessmentData = {
+            questions: [
+                {
+                    id: "automation_level",
+                    question: "What is your current level of automation in software development processes?",
+                    options: [
+                        {value: 1, label: "Manual processes, minimal automation"},
+                        {value: 2, label: "Basic automation (CI, some tests)"},
+                        {value: 3, label: "Full CI/CD with automated testing"}
+                    ]
+                },
+                {
+                    id: "platforms_count", 
+                    question: "How many automotive platforms are you developing?",
+                    options: [
+                        {value: 1, label: "1-2 platforms"},
+                        {value: 2, label: "3-5 platforms"},
+                        {value: 3, label: "More than 5 platforms"}
+                    ]
+                },
+                {
+                    id: "quality_metrics",
+                    question: "What quality metrics do you track?",
+                    options: [
+                        {value: 1, label: "Not tracking systematically"},
+                        {value: 2, label: "Basic metrics (bugs, development time)"},
+                        {value: 3, label: "Advanced metrics with dashboards and analytics"}
+                    ]
+                },
+                {
+                    id: "production_defects",
+                    question: "How often do you experience defects in production?",
+                    options: [
+                        {value: 1, label: "Often (several times per month)"},
+                        {value: 2, label: "Sometimes (once a month or less)"},
+                        {value: 3, label: "Rarely (once a quarter or less)"}
+                    ]
+                },
+                {
+                    id: "sdv_plans",
+                    question: "Are you planning to transition to Software-Defined Vehicle architecture?",
+                    options: [
+                        {value: 1, label: "Not planning in the near future"},
+                        {value: 2, label: "Considering the possibilities"},
+                        {value: 3, label: "Actively planning implementation"}
+                    ]
+                }
+            ],
+            readinessLevels: [
+                {
+                    level: "low",
+                    range: [0, 6],
+                    title: "Initial Readiness Level",
+                    description: "We recommend starting with basic automation of development processes",
+                    recommendations: [
+                        "Implement basic CI/CD processes",
+                        "Automate testing procedures", 
+                        "Establish quality metrics",
+                        "Train team in DevOps practices"
+                    ]
+                },
+                {
+                    level: "medium",
+                    range: [7, 12], 
+                    title: "DevOps Factory Ready",
+                    description: "You have the foundation to implement DevOps Factory approaches",
+                    recommendations: [
+                        "Extend automation to all processes",
+                        "Implement quality gates",
+                        "Integrate real-time metrics",
+                        "Prepare for scaling"
+                    ]
+                },
+                {
+                    level: "high",
+                    range: [13, 15],
+                    title: "SDV Factory Ready", 
+                    description: "High readiness for transformation to SDV Factory",
+                    recommendations: [
+                        "Centralize development tools",
+                        "Implement cross-platform automation",
+                        "Deploy OTA updates and validation",
+                        "Integrate AI-driven analytics and optimization"
+                    ]
+                }
+            ]
+        };
         
         this.init();
     }
@@ -15,6 +104,7 @@ class PresentationApp {
         this.updateNavButtons();
         this.setupKeyboardNavigation();
         this.addHoverEffects();
+        this.setupAssessmentForm();
     }
 
     setupEventListeners() {
@@ -46,6 +136,11 @@ class PresentationApp {
 
     setupKeyboardNavigation() {
         document.addEventListener('keydown', (e) => {
+            // Don't handle keyboard events when in assessment form
+            if (this.currentSlide === 10 && e.target.tagName === 'INPUT') {
+                return;
+            }
+
             switch(e.key) {
                 case 'ArrowRight':
                 case ' ':
@@ -96,8 +191,8 @@ class PresentationApp {
             const deltaX = endX - startX;
             const deltaY = endY - startY;
 
-            // Only handle horizontal swipes
-            if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+            // Only handle horizontal swipes outside of assessment slide
+            if (this.currentSlide !== 10 && Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
                 if (deltaX > 0) {
                     this.previousSlide();
                 } else {
@@ -105,6 +200,225 @@ class PresentationApp {
                 }
             }
         }, { passive: true });
+    }
+
+    setupAssessmentForm() {
+        const submitBtn = document.getElementById('submitAssessment');
+        const retakeBtn = document.getElementById('retakeAssessment');
+        
+        if (submitBtn) {
+            submitBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.handleAssessmentSubmit();
+            });
+        }
+
+        if (retakeBtn) {
+            retakeBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.resetAssessment();
+            });
+        }
+
+        // Contact us button handler
+        const contactBtns = document.querySelectorAll('.contact-us-btn, .cta-button');
+        contactBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                this.showContactModal();
+            });
+        });
+    }
+
+    handleAssessmentSubmit() {
+        const submitBtn = document.getElementById('submitAssessment');
+        const contactInputs = ['contactName', 'contactEmail', 'contactCompany', 'contactRole'];
+        
+        // Validate contact information
+        let isContactValid = true;
+        contactInputs.forEach(inputId => {
+            const input = document.getElementById(inputId);
+            if (!input || !input.value.trim()) {
+                isContactValid = false;
+                if (input) {
+                    input.style.borderColor = 'var(--color-error)';
+                    input.addEventListener('input', () => {
+                        input.style.borderColor = '';
+                    }, { once: true });
+                }
+            }
+        });
+
+        // Validate email format
+        const emailInput = document.getElementById('contactEmail');
+        if (emailInput && emailInput.value) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailInput.value)) {
+                isContactValid = false;
+                emailInput.style.borderColor = 'var(--color-error)';
+                emailInput.addEventListener('input', () => {
+                    emailInput.style.borderColor = '';
+                }, { once: true });
+            }
+        }
+
+        if (!isContactValid) {
+            this.showNotification('Please fill in all contact information fields correctly.', 'error');
+            return;
+        }
+
+        // Calculate assessment score
+        const score = this.calculateAssessmentScore();
+        
+        if (score === null) {
+            this.showNotification('Please answer all assessment questions.', 'error');
+            return;
+        }
+
+        // Show loading state
+        submitBtn.innerHTML = '<i class="fas fa-spinner"></i> Calculating Results...';
+        submitBtn.disabled = true;
+        submitBtn.classList.add('loading');
+
+        // Simulate processing time
+        setTimeout(() => {
+            this.showAssessmentResults(score);
+            submitBtn.innerHTML = '<i class="fas fa-chart-line"></i> Get Readiness Assessment';
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('loading');
+        }, 1500);
+    }
+
+    calculateAssessmentScore() {
+        let totalScore = 0;
+        let answeredQuestions = 0;
+        
+        this.assessmentData.questions.forEach(question => {
+            const selectedOption = document.querySelector(`input[name="${question.id}"]:checked`);
+            if (selectedOption) {
+                totalScore += parseInt(selectedOption.value);
+                answeredQuestions++;
+            }
+        });
+
+        return answeredQuestions === this.assessmentData.questions.length ? totalScore : null;
+    }
+
+    showAssessmentResults(score) {
+        const resultsSection = document.getElementById('resultsSection');
+        const resultsTitle = document.getElementById('resultsTitle');
+        const scoreValue = document.getElementById('scoreValue');
+        const resultsDescription = document.getElementById('resultsDescription');
+        const recommendationsList = document.getElementById('recommendationsList');
+
+        // Find the appropriate readiness level
+        const readinessLevel = this.assessmentData.readinessLevels.find(level => 
+            score >= level.range[0] && score <= level.range[1]
+        );
+
+        if (!readinessLevel) return;
+
+        // Update results display
+        resultsTitle.textContent = readinessLevel.title;
+        scoreValue.textContent = score;
+        resultsDescription.textContent = readinessLevel.description;
+
+        // Clear and populate recommendations
+        recommendationsList.innerHTML = '';
+        readinessLevel.recommendations.forEach(rec => {
+            const li = document.createElement('li');
+            li.textContent = rec;
+            recommendationsList.appendChild(li);
+        });
+
+        // Show results with animation
+        resultsSection.classList.remove('hidden');
+        setTimeout(() => {
+            resultsSection.classList.add('visible');
+            // Scroll to results
+            document.getElementById('assessmentContainer').scrollTop = resultsSection.offsetTop - 100;
+        }, 100);
+
+        // Update results icon based on score
+        const resultsIcon = document.querySelector('.results-icon');
+        if (score <= 6) {
+            resultsIcon.className = 'fas fa-seedling results-icon';
+            resultsIcon.style.color = '#ffd700';
+        } else if (score <= 12) {
+            resultsIcon.className = 'fas fa-cogs results-icon';
+            resultsIcon.style.color = '#ffd700';
+        } else {
+            resultsIcon.className = 'fas fa-trophy results-icon';
+            resultsIcon.style.color = '#ffd700';
+        }
+    }
+
+    resetAssessment() {
+        // Clear all form inputs
+        const form = document.querySelector('.assessment-form');
+        const inputs = form.querySelectorAll('input');
+        inputs.forEach(input => {
+            if (input.type === 'radio') {
+                input.checked = false;
+            } else {
+                input.value = '';
+            }
+            input.style.borderColor = '';
+        });
+
+        // Hide results
+        const resultsSection = document.getElementById('resultsSection');
+        resultsSection.classList.remove('visible');
+        setTimeout(() => {
+            resultsSection.classList.add('hidden');
+        }, 300);
+
+        // Scroll to top of assessment
+        document.getElementById('assessmentContainer').scrollTop = 0;
+    }
+
+    showNotification(message, type = 'info') {
+        // Create notification element
+        const notification = document.createElement('div');
+        notification.className = `notification notification--${type}`;
+        notification.innerHTML = `
+            <div class="notification-content">
+                <i class="fas fa-${type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
+                <span>${message}</span>
+            </div>
+        `;
+
+        // Add styles
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--color-${type === 'error' ? 'error' : 'info'});
+            color: var(--color-btn-primary-text);
+            padding: 12px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 10000;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.3s ease-out;
+        `;
+
+        document.body.appendChild(notification);
+
+        // Show notification
+        setTimeout(() => {
+            notification.style.opacity = '1';
+            notification.style.transform = 'translateX(0)';
+        }, 100);
+
+        // Hide notification after 3 seconds
+        setTimeout(() => {
+            notification.style.opacity = '0';
+            notification.style.transform = 'translateX(100%)';
+            setTimeout(() => {
+                document.body.removeChild(notification);
+            }, 300);
+        }, 3000);
     }
 
     nextSlide() {
@@ -244,9 +558,49 @@ class PresentationApp {
                 this.animateValueProps();
                 break;
             case 10:
+                this.animateAssessment();
+                break;
+            case 11:
                 this.animateCTA();
                 break;
         }
+    }
+
+    animateAssessment() {
+        const elements = [
+            '.contact-section',
+            '.questions-section',
+            '.submit-section'
+        ];
+
+        elements.forEach((selector, index) => {
+            const element = document.querySelector(`#slide${this.currentSlide} ${selector}`);
+            if (element) {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    element.style.transition = 'all 0.6s ease-out';
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }, index * 200);
+            }
+        });
+
+        // Animate question cards
+        setTimeout(() => {
+            const questionCards = document.querySelectorAll(`#slide${this.currentSlide} .question-card`);
+            questionCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateX(-30px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease-out';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateX(0)';
+                }, index * 100);
+            });
+        }, 800);
     }
 
     animateTitleSlide() {
@@ -451,33 +805,29 @@ class PresentationApp {
                 }
             });
         });
-
-        // Add click handler for CTA button
-        const ctaButton = document.querySelector('.cta-button');
-        if (ctaButton) {
-            ctaButton.addEventListener('click', () => {
-                // Simulate contact action
-                this.showContactModal();
-            });
-        }
     }
 
     showContactModal() {
         // Create a simple modal effect
-        const button = document.querySelector('.cta-button');
-        if (!button) return;
+        const buttons = document.querySelectorAll('.cta-button, .contact-us-btn');
         
-        const originalText = button.innerHTML;
-        
-        button.innerHTML = '<i class="fas fa-check"></i> Thank You!';
-        button.style.background = 'var(--color-success)';
-        button.disabled = true;
+        buttons.forEach(button => {
+            if (!button.dataset.clicked) {
+                const originalText = button.innerHTML;
+                
+                button.innerHTML = '<i class="fas fa-check"></i> Thank You!';
+                button.style.background = 'var(--color-success)';
+                button.disabled = true;
+                button.dataset.clicked = 'true';
 
-        setTimeout(() => {
-            button.innerHTML = originalText;
-            button.style.background = 'var(--color-primary)';
-            button.disabled = false;
-        }, 2000);
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.style.background = '';
+                    button.disabled = false;
+                    delete button.dataset.clicked;
+                }, 2000);
+            }
+        });
     }
 
     // Auto-play functionality (optional)
@@ -501,6 +851,7 @@ class PresentationApp {
     // Utility method to reset presentation
     reset() {
         this.goToSlide(1);
+        this.resetAssessment();
     }
 }
 

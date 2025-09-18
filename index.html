@@ -14,7 +14,7 @@
             <button id="prevBtn" class="nav-btn" aria-label="Previous slide">
                 <i class="fas fa-chevron-left"></i>
             </button>
-            <span id="slideCounter" class="slide-counter">1 / 10</span>
+            <span id="slideCounter" class="slide-counter">1 / 11</span>
             <button id="nextBtn" class="nav-btn" aria-label="Next slide">
                 <i class="fas fa-chevron-right"></i>
             </button>
@@ -277,7 +277,7 @@
                         <div class="phase-number">1</div>
                         <div class="phase-content">
                             <h3>Assessment</h3>
-                            <div class="phase-duration"></div>
+                            <div class="phase-duration">2-4 weeks</div>
                             <p>Current state analysis, gap identification</p>
                         </div>
                     </div>
@@ -285,7 +285,7 @@
                         <div class="phase-number">2</div>
                         <div class="phase-content">
                             <h3>Foundation</h3>
-                            <div class="phase-duration"></div>
+                            <div class="phase-duration">8-12 weeks</div>
                             <p>Basic CI/CD setup, quality gates implementation</p>
                         </div>
                     </div>
@@ -293,7 +293,7 @@
                         <div class="phase-number">3</div>
                         <div class="phase-content">
                             <h3>Optimization</h3>
-                            <div class="phase-duration"></div>
+                            <div class="phase-duration">12-16 weeks</div>
                             <p>Advanced automation, metrics integration</p>
                         </div>
                     </div>
@@ -301,7 +301,7 @@
                         <div class="phase-number">4</div>
                         <div class="phase-content">
                             <h3>Scale & Transform</h3>
-                            <div class="phase-duration"></div>
+                            <div class="phase-duration">16-24 weeks</div>
                             <p>SDV Factory capabilities, multi-platform integration</p>
                         </div>
                     </div>
@@ -330,14 +330,202 @@
                         <i class="fas fa-shield-check"></i>
                         <h3>Quality Assurance</h3>
                         <p>Ensure consistent, predictable quality with automated gates and continuous monitoring</p>
-                        <div class="value-metric">High Reliability</div>
+                        <div class="value-metric">99.9% Reliability</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 10: Call to Action -->
+        <!-- Slide 10: Assessment Questionnaire -->
         <div class="slide" id="slide10">
+            <div class="slide-content assessment-slide">
+                <h2 class="slide-title">Factory Readiness Assessment</h2>
+                <div class="assessment-container" id="assessmentContainer">
+                    <div class="assessment-form">
+                        <!-- Contact Information -->
+                        <div class="contact-section">
+                            <h3><i class="fas fa-user"></i> Contact Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="contactName">Name</label>
+                                    <input type="text" id="contactName" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="contactEmail">Email</label>
+                                    <input type="email" id="contactEmail" class="form-control" placeholder="your.email@company.com" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="contactCompany">Company</label>
+                                    <input type="text" id="contactCompany" class="form-control" placeholder="Your Company" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="contactRole">Role</label>
+                                    <input type="text" id="contactRole" class="form-control" placeholder="Your Role" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Assessment Questions -->
+                        <div class="questions-section" id="questionsSection">
+                            <h3><i class="fas fa-clipboard-check"></i> Assessment Questions</h3>
+                            
+                            <!-- Question 1 -->
+                            <div class="question-card">
+                                <h4 class="question-title">What is your current level of automation in software development processes?</h4>
+                                <div class="question-options">
+                                    <label class="radio-option">
+                                        <input type="radio" name="automation_level" value="1">
+                                        <span class="radio-custom"></span>
+                                        <span class="option-text">Manual processes, minimal automation</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="automation_level" value="2">
+                                        <span class="radio-custom"></span>
+                                        <span class="option-text">Basic automation (CI, some tests)</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="automation_level" value="3">
+                                        <span class="radio-custom"></span>
+                                        <span class="option-text">Full CI/CD with automated testing</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Question 2 -->
+                            <div class="question-card">
+                                <h4 class="question-title">How many automotive platforms are you developing?</h4>
+                                <div class="question-options">
+                                    <label class="radio-option">
+                                        <input type="radio" name="platforms_count" value="1">
+                                        <span class="radio-custom"></span>
+                                        <span class="option-text">1-2 platforms</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="platforms_count" value="2">
+                                        <span class="radio-custom"></span>
+                                        <span class="option-text">3-5 platforms</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="platforms_count" value="3">
+                                        <span class="radio-custom"></span>
+                                        <span class="option-text">More than 5 platforms</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Question 3 -->
+                            <div class="question-card">
+                                <h4 class="question-title">What quality metrics do you track?</h4>
+                                <div class="question-options">
+                                    <label class="radio-option">
+                                        <input type="radio" name="quality_metrics" value="1">
+                                        <span class="radio-custom"></span>
+                                        <span class="option-text">Not tracking systematically</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="quality_metrics" value="2">
+                                        <span class="radio-custom"></span>
+                                        <span class="option-text">Basic metrics (bugs, development time)</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="quality_metrics" value="3">
+                                        <span class="radio-custom"></span>
+                                        <span class="option-text">Advanced metrics with dashboards and analytics</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Question 4 -->
+                            <div class="question-card">
+                                <h4 class="question-title">How often do you experience defects in production?</h4>
+                                <div class="question-options">
+                                    <label class="radio-option">
+                                        <input type="radio" name="production_defects" value="1">
+                                        <span class="radio-custom"></span>
+                                        <span class="option-text">Often (several times per month)</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="production_defects" value="2">
+                                        <span class="radio-custom"></span>
+                                        <span class="option-text">Sometimes (once a month or less)</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="production_defects" value="3">
+                                        <span class="radio-custom"></span>
+                                        <span class="option-text">Rarely (once a quarter or less)</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Question 5 -->
+                            <div class="question-card">
+                                <h4 class="question-title">Are you planning to transition to Software-Defined Vehicle architecture?</h4>
+                                <div class="question-options">
+                                    <label class="radio-option">
+                                        <input type="radio" name="sdv_plans" value="1">
+                                        <span class="radio-custom"></span>
+                                        <span class="option-text">Not planning in the near future</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="sdv_plans" value="2">
+                                        <span class="radio-custom"></span>
+                                        <span class="option-text">Considering the possibilities</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="sdv_plans" value="3">
+                                        <span class="radio-custom"></span>
+                                        <span class="option-text">Actively planning implementation</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="submit-section">
+                            <button id="submitAssessment" class="btn btn--primary btn--lg assessment-submit">
+                                <i class="fas fa-chart-line"></i>
+                                Get Readiness Assessment
+                            </button>
+                        </div>
+
+                        <!-- Results Section -->
+                        <div class="results-section hidden" id="resultsSection">
+                            <div class="results-card">
+                                <div class="results-header">
+                                    <i class="fas fa-trophy results-icon"></i>
+                                    <h3 id="resultsTitle">Your Readiness Level</h3>
+                                    <div class="score-display">
+                                        <span class="score-label">Score:</span>
+                                        <span id="scoreValue" class="score-value">0</span>
+                                        <span class="score-total">/ 15</span>
+                                    </div>
+                                </div>
+                                <div class="results-body">
+                                    <p id="resultsDescription" class="results-description"></p>
+                                    <div class="recommendations">
+                                        <h4><i class="fas fa-lightbulb"></i> Recommendations</h4>
+                                        <ul id="recommendationsList" class="recommendations-list"></ul>
+                                    </div>
+                                </div>
+                                <div class="results-footer">
+                                    <button class="btn btn--secondary" id="retakeAssessment">
+                                        <i class="fas fa-redo"></i> Retake Assessment
+                                    </button>
+                                    <button class="btn btn--primary contact-us-btn">
+                                        <i class="fas fa-envelope"></i> Contact Our Team
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Call to Action -->
+        <div class="slide" id="slide11">
             <div class="slide-content cta-slide">
                 <h2 class="slide-title">Ready to Transform Your Quality?</h2>
                 <div class="cta-content">
@@ -355,7 +543,7 @@
                         <div class="contact-info">
                             <div class="contact-item">
                                 <i class="fas fa-envelope"></i>
-                                <span>swfactory2025@globallogic.com</span>
+                                <span>info@swfactory2025.com</span>
                             </div>
                             <div class="contact-item">
                                 <i class="fas fa-phone"></i>
@@ -363,7 +551,7 @@
                             </div>
                             <div class="contact-item">
                                 <i class="fas fa-globe"></i>
-                                <span>www.expo-swfactory2025.com</span>
+                                <span>www.swfactory2025.com</span>
                             </div>
                         </div>
                         <button class="btn btn--primary btn--lg cta-button">
