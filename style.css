@@ -854,21 +854,20 @@ body {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  overflow: visible; /* <-- add this line */
 }
 
 /* Assessment Slide Specific Styles */
 .assessment-slide .slide-content {
   justify-content: flex-start;
   height: 100%;
-  overflow: hidden;
+  overflow: visible; /* <-- change from hidden/auto to visible */
 }
 
 .assessment-container {
-  height: 100%;
+  max-height: 70vh; /* or 80vh, adjust as needed */
   overflow-y: auto;
-  overflow-x: hidden;
-  padding: var(--space-16) 0;
-  scroll-behavior: smooth;
+  padding-right: 16px;
 }
 
 /* Custom scrollbar for better visibility */
